@@ -1,11 +1,8 @@
 import Button from "../packages/button";
-import Input from "../packages/input";
 
-const components = [Button, Input];
+const components = [Button];
 
 const install = function (Vue) {
-  console.log("你好世界");
-
   components.forEach((component) => {
     Vue.component(component.name, component);
   });
@@ -14,5 +11,4 @@ const install = function (Vue) {
 export default {
   install,
   Button,
-  Input,
 };
