@@ -5,12 +5,19 @@
   "main": "lib/x-ui.common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.common.js"
+    "build": "webpack --config webpack.common.js",
+    "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+    "unify": "npm run build:theme && npm run build && npm pack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cp-cli": "^2.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.2",
     "vue-loader": "^15.11.1",
     "vue-template-compiler": "^2.7.16",
     "webpack": "^4.14.0",
