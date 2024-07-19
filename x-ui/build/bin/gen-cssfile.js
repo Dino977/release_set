@@ -16,16 +16,25 @@ function fileExists(fullPath) {
 
 componentNames.forEach((name) => {
   // 下述组件，不单独创建样式文件
-  if (['icon', 'option', 'option-group'].includes(name)) return
+  if (["icon", "option", "option-group"].includes(name)) return;
 
   // 由组件名，构建样式文件名称（如：input -> input.scss）
   const fileName = `${name}.scss`;
   // 构建样式文件的全路径
-  const fullPath = path.resolve(basePath, 'theme-chalk/src', fileName);
+  const fullPath = path.resolve(basePath, "theme-chalk/src", fileName);
   // 判断该样式文件是否存在
   if (!fileExists(fullPath)) {
     // 仅当未存在时，构建空文件
-    fs.writeFileSync(fullPath, '', 'utf-8');
-    console.log('新创建文件：', fileName)
+    fs.writeFileSync(fullPath, "", "utf-8");
   }
 });
+
+// 覆盖index.scss文件（该文件暴露其余样式内容）
+const burstStyleCollection = [
+  "@import './base.scss';", // base.scss文件，常用于存储 图标、动画等样式
+  componentNames.map((name) => `@import './${name}.scss';`),
+];
+fs.writeFileSync(
+  path.resolve(basePath, "theme-chalk/src/index.scss"),
+  burstStyleCollection.join("\n")
+);
