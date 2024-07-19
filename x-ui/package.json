@@ -5,9 +5,10 @@
   "main": "lib/x-ui.common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.common.js",
+    "build": "webpack --config ./build/webpack.common.js",
     "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
-    "unify": "npm run build:theme && npm run build && npm pack"
+    "unify": "npm run build:theme && npm run build && npm pack",
+    "gen": "node build/bin/gen-cssfile.js"
   },
   "keywords": [],
   "author": "",
