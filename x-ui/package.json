@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./build/webpack.common.js",
-    "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+    "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.js",
     "unify": "npm run build:theme && npm run build && npm pack",
     "gen": "node build/bin/gen-cssfile.js"
   },

@@ -13,7 +13,7 @@ function compile() {
       }) // 补全前缀
     )
     .pipe(cssmin()) // 压缩
-    .pipe(dest("./lib")); // 于当前文件夹下的lib文件夹输入最终文件
+    .pipe(dest("../../lib/theme-chalk")); // 输入最终文件
 }
 
 exports.build = series(compile);
