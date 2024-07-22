@@ -8,17 +8,20 @@
     "build": "webpack --config ./build/webpack.common.js",
     "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.js",
     "unify": "npm run build:theme && npm run build && npm pack",
-    "gen": "node build/bin/gen-cssfile.js"
+    "gen": "node build/bin/gen-cssfile.js",
+    "new": "node build/bin/new-struFile.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cp-cli": "^2.0.0",
+    "file-save": "^0.2.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cssmin": "^0.2.0",
     "gulp-sass": "^4.0.2",
+    "uppercamelcase": "^1.1.0",
     "vue-loader": "^15.11.1",
     "vue-template-compiler": "^2.7.16",
     "webpack": "^4.14.0",
