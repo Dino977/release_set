@@ -5,7 +5,7 @@
   "main": "lib/x-ui.common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./build/webpack.common.js",
+    "build": "webpack --config ./build/webpack.common.js && webpack --config ./build/webpack.components.js",
     "build:theme": "gulp build --gulpfile packages/theme-chalk/gulpfile.js",
     "unify": "npm run build:theme && npm run build && npm pack",
     "gen": "node build/bin/gen-cssfile.js",
