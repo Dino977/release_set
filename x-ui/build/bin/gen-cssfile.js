@@ -32,7 +32,7 @@ componentNames.forEach((name) => {
 // 覆盖index.scss文件（该文件暴露其余样式内容）
 const burstStyleCollection = [
   "@import './base.scss';", // base.scss文件，常用于存储 图标、动画等样式
-  componentNames.map((name) => `@import './${name}.scss';`),
+  ...componentNames.map((name) => `@import './${name}.scss';`),
 ];
 fs.writeFileSync(
   path.resolve(basePath, "theme-chalk/src/index.scss"),
