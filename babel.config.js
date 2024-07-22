@@ -4,7 +4,7 @@ module.exports = {
     [
       "component",
       {
-        libraryName: "x-ui",
+        libraryName: "@hey_dino/x-ui",
         styleLibraryName: "theme-chalk",
       },
     ],
