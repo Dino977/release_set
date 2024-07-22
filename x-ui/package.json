@@ -1,8 +1,14 @@
 {
-  "name": "x-ui",
+  "name": "@hey_dino/x-ui",
   "version": "1.0.0",
   "description": "",
   "main": "lib/x-ui.common.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "hey_dino"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./build/webpack.common.js && webpack --config ./build/webpack.components.js",
@@ -13,7 +19,6 @@
     "build:entry": "node build/bin/build-entry.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "cp-cli": "^2.0.0",
